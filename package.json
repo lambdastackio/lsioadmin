@@ -1,16 +1,16 @@
 {
-  "name": "adminlte-reactjs",
-  "version": "1.0.3",
+  "name": "lsio-ui",
+  "version": "0.1.0",
   "repository": {
     "type": "git",
-    "url": "http://github.com/booleanhunter/ReactJS-AdminLTE"
+    "url": "https://github.com/lambdastackio/lsio-ui"
   },
-  "author": "booleanhunter",
-  "license": "MIT",
-  "original-credits": "admin-lte",
+  "author": "Austin Jones",
+  "license": "Apache2/MIT",
+  "original-credits": "adminlte-reactjs",
   "original-credits-repository": {
     "type": "git",
-    "url": "git://github.com/almasaeed2010/AdminLTE.git"
+    "url": "https://github.com/booleanhunter/ReactJS-AdminLTE"
   },
   "dependencies": {
     "babel-core": "~6.5.1",

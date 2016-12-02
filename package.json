@@ -1,6 +1,6 @@
 {
   "name": "lsio-ui",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "repository": {
     "type": "git",
     "url": "https://github.com/lambdastackio/lsio-ui"
@@ -22,6 +22,7 @@
     "consolidate": "^0.13.1",
     "express": "^4.13.3",
     "handlebars": "^4.0.3",
+    "jquery": "^3.1.1",
     "jsx-loader": "^0.13.2",
     "raphael": "^2.1.4",
     "react": "~0.14.7",

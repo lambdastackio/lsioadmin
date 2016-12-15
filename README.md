@@ -1,79 +1,60 @@
-# LSIO-UI (code name)
+## lsioAdmin
 
-Base UI project for Admin and User UI components.
+Admin interface for SDS (Software Defined Storage) built using [React](https://facebook.github.io/react/) on the frontend and Rust on the backend.
 
+Initial focus is on Ceph:
 
-### UPDATES:
+```
+Object Store
+Block Storage
+File System
+```
 
-- [UI Elements](https://github.com/booleanhunter/ReactJS-AdminLTE/tree/master/public/src/pages/ui-elements) turning up.
+### Folder Structure and App Model
 
-    [Click here](http://ec2-52-74-208-196.ap-southeast-1.compute.amazonaws.com:8000/UI/general.html) to see it live
+We use model structure proposed by facebook by using the [`create-react-app`](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#updating-to-new-releases).
 
+This model allows us to use react-scripts to build and deploy instead of creating and maintaining custom webpack configs.
 
+JavaScript based projects have no real standard which is especially true when looking at React JS built code bases. Because of that we created a document to explain the layout of the project which can also be used for other projects.
 
-- [Timeline](https://github.com/booleanhunter/ReactJS-AdminLTE/tree/master/public/src/pages/timeline-page)
+[Folder Structure](docs/folder_structure.md)
 
-    [Click here](http://ec2-52-74-208-196.ap-southeast-1.compute.amazonaws.com:8000/timeline.html) to see it live
+### React JS
 
+As stated, this project was bootstrapped with React. The process created a `react.md` that provides a number of good links which can be found [here](docs/react.md).
 
-- [Widgets](https://github.com/booleanhunter/ReactJS-AdminLTE/tree/master/public/src/pages/widgets-page)
+### Offline Fonts
 
-    [Click here](http://ec2-52-74-208-196.ap-southeast-1.compute.amazonaws.com:8000/widgets.html) to see a live preview!
+In a corporate environment you usually do not have access to the outside world so fonts, javascript and other assets need to be made available offline. GoogleFonts can be found in the LambdaStack Project repo.
 
-    ![](https://github.com/booleanhunter/ReactJS-AdminLTE/blob/master/screenshots/widgets.png?raw=true)
-
-
-##### Widgets will use velocity.js animations instead of the originally used JQuery animations wherever possible, for improved performance across all browsers and devices.
-
-
-[Dashboard](https://github.com/booleanhunter/ReactJS-AdminLTE/tree/master/public/src/pages/dashboardV1)
-
-Will soon be populated with charts.
-
-![](https://github.com/booleanhunter/ReactJS-AdminLTE/blob/master/screenshots/dashboard-v1.png?raw=true)
-
-
-More stuff coming soon. Stay tuned!
-
-##### Due to several work related commitments, the development rate is a little slow and I apologize for that. However, I'm looking for awesome folks :metal: who could contribute and help me maintain this project. If you have any queries that you may have on how to contribute, or you have just general questions about how to use the components in your app - feel free to shoot an email. I'll help you out! :smile_cat:
-
+There is a /public/css/fonts.css that contains references to the self-hosted fonts used from GoogleFonts. The Open Font License for the fonts can be found in `OFL.txt`.
 
 #### Instructions to run
 
-- Fork or clone this repo. Alternatively - if you have NPM installed, you can also do `npm install adminlte-reactjs`.
-- Install nodejs and NPM
-- Go to the project's root folder from your terminal and run `npm install`
-- Run `node server.js`
-- Going to [http://localhost:8000](http://localhost:8000) will render an empty dashboard skeleton in the client-side using ReactJS. Clicking on one of the dashboard options on the left pane displays the original dashboards from AdminLTE.
-- Go to [http://localhost:8000/widgets.html](http://localhost:8000/widgets.html) to see available widgets in ReactJS.
+Installing on OSX
+
+It's recommended to use homebrew for your package manager on OSX. It makes life easier.
+
+If you do not have homebrew installed then go to:
+
+`http://brew.sh/`
+
+Follow the instructions for installing it.
+
+Update homebrew first
+
+`brew update`
+
+Install Node.js and Yarn (Yarn is a replacement for npm)
+
+`brew install node`
+
+`brew install yarn`
+
+- Install nodejs and yarn (yarn is recommended over npm since it works a lot better)
+- Go to the project's root folder from your terminal and run `yarn install`
+- Run `npm run stat`
+- Going to [http://localhost:3000](http://localhost:3000) will render an empty dashboard skeleton in the client-side using ReactJS.
+- Go to [http://localhost:8000](http://localhost:3000) to see local development version
 - Use [React Developer Tools Chrome Extension](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en) to understand the components hierarchy and structure and to track down bugs.
-
-
-#### For development
-
-- React Hot Loader can be used to ease your development workflow. This can be done by installing dev dependencies from `package.json` file. If you haven't, then
-run `npm install webpack-dev-server` and `npm install react-hot-loader`.
-- Then in your HTML, change your javascript bundles' source paths to point to the webpack-dev-server proxy in your `script` tags. So if you have something
-like this
-
-```html
-<script src="/dist/js/vendors.js"></script>
-<script src="/dist/js/app.bundle.js"></script>
-```
-
-change this to
-
-```html
-<script src="http://localhost:8080/dist/js/vendors.js"></script>
-<script src="http://localhost:8080/dist/js/app.bundle.js"></script>
-```
-
-For a detailed explanation on setting up a workflow using Webpack, check out my blog post - [Webpack for The Fast and The Furious](https://medium.com/@booleanhunter/webpack-for-the-fast-and-the-furious-bf8d3746adbd#.uzx2l0hy4) :oncoming_police_car:
-
-This is still a work in progress and will get better over time. Will try and think of more essential features.
-
-#### Acknowledgement
-Original ReactJS version of the original AdminLTE dashboard - https://github.com/almasaeed2010/AdminLTE. This project consists of widgets, charts and other components written in ReactJS. Stylesheets are borrowed from the AdminLTE project. The ReactJS conversion was done by booleanhunter - https://github.com/booleanhunter/ReactJS-AdminLTE.
-
-#### License
-This project uses MIT and Apache2. Code from the original projects that this project is based on uses MIT and is reflected in the header portion of each file (if possible). All other files not part of the original project or those that have been modified have an Apache2 license.
